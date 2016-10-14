@@ -72,6 +72,12 @@ namespace AndreaAngella.Tests
             {
                 Assert.That(new Fraction(1, 3) + new Fraction(4, 3), Is.EqualTo(new Fraction(5, 3)));
             }
+
+            [Test]
+            public void SevenOveThree_Plus_FourOverFive()
+            {
+                Assert.That(new Fraction(7, 3) + new Fraction(4, 5), Is.EqualTo(new Fraction(47, 15)));
+            }
         }
 
         public class ToStringTests

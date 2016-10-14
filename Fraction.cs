@@ -33,7 +33,16 @@ namespace AndreaAngella
                 return new Fraction(f1.m_Numerator*f2.m_Denominator + f2.m_Numerator, f2.m_Denominator);
             }
 
-            return new Fraction(f1.m_Numerator + f2.m_Numerator * f1.m_Denominator, f1.m_Denominator);
+            if (f2.m_Denominator == 1)
+            {
+                return new Fraction(f1.m_Numerator + f2.m_Numerator * f1.m_Denominator, f1.m_Denominator);
+            }
+
+            var lowestCommonMultiple = f1.m_Denominator * f2.m_Denominator;
+
+            return new Fraction(f1.m_Numerator * lowestCommonMultiple / f1.m_Denominator + 
+                                f2.m_Numerator * lowestCommonMultiple / f2.m_Denominator, 
+                                lowestCommonMultiple);
         }
 
         public static implicit operator Fraction (int value)
