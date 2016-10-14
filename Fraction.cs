@@ -4,11 +4,11 @@ namespace AndreaAngella
 {
     public class Fraction : IEquatable<Fraction>
     {
-        private readonly int m_Numberator;
+        private readonly int m_Numerator;
 
-        public Fraction(int numberator)
+        public Fraction(int numerator)
         {
-            m_Numberator = numberator;
+            m_Numerator = numerator;
         }
 
         public static Fraction operator + (Fraction f1, Fraction f2)
@@ -21,12 +21,17 @@ namespace AndreaAngella
             return new Fraction(value);
         }
 
+        public override string ToString()
+        {
+            return m_Numerator.ToString();
+        }
+
         public bool Equals(Fraction other)
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return m_Numberator == other.m_Numberator;
+            return m_Numerator == other.m_Numerator;
         }
 
         public override bool Equals(object fraction)
@@ -36,7 +41,7 @@ namespace AndreaAngella
 
         public override int GetHashCode()
         {
-            return m_Numberator;
+            return m_Numerator;
         }
     }
 }
