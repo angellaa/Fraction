@@ -54,6 +54,12 @@ namespace AndreaAngella.Tests
             {
                 Assert.That(1 + new Fraction(1, 2), Is.EqualTo(new Fraction(3, 2)));
             }
+
+            [Test]
+            public void Five_Plus_OneOverTwo()
+            {
+                Assert.That(5 + new Fraction(1, 2), Is.EqualTo(new Fraction(11, 2)));
+            }
         }
 
         public class ToStringTests
