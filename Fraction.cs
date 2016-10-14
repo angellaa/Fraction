@@ -23,7 +23,7 @@ namespace AndreaAngella
 
         public static Fraction operator + (Fraction f1, Fraction f2)
         {
-            return new Fraction(f1.m_Numerator + f2.m_Numerator, f2.m_Denominator);
+            return new Fraction(f1.m_Numerator * f2.m_Denominator + f2.m_Numerator, f2.m_Denominator);
         }
 
         public static implicit operator Fraction (int value)
