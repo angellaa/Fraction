@@ -25,5 +25,16 @@ namespace AndreaAngella.Tests
 
             Assert.That(a + b, Is.EqualTo(result));
         }
+
+        [Test]
+        public void FractionZero_Plus_Zero()
+        {
+            var a = new Fraction(0);
+            var b = 0;
+
+            var result = new Fraction(0);
+
+            Assert.That(a + b, Is.EqualTo(result));
+        }
     }
 }
