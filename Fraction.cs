@@ -16,6 +16,11 @@ namespace AndreaAngella
             return new Fraction(0);
         }
 
+        public static implicit operator Fraction (int value)
+        {
+            return new Fraction(value);
+        }
+
         public bool Equals(Fraction other)
         {
             if (ReferenceEquals(null, other)) return false;
