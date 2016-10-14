@@ -27,5 +27,17 @@ namespace AndreaAngella.Tests
         {
             Assert.That(new Fraction(4) + new Fraction(9), Is.EqualTo(new Fraction(13)));
         }
+
+        [Test]
+        public void Four_Plus_FractionNine()
+        {
+            Assert.That(4 + new Fraction(9), Is.EqualTo(new Fraction(13)));
+        }
+
+        [Test]
+        public void FractionFour_Plus_Nine()
+        {
+            Assert.That(new Fraction(4) + 9, Is.EqualTo(new Fraction(13)));
+        }
     }
 }
