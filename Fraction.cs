@@ -5,16 +5,16 @@ namespace AndreaAngella
     public class Fraction : IEquatable<Fraction>
     {
         private readonly int m_Numerator;
-        private int m_Denominator;
+        private readonly int m_Denominator;
 
-        public Fraction(int numerator)
+        public Fraction(int numerator) : this(numerator, 1)
         {
-            m_Numerator = numerator;
         }
 
-        public Fraction(int numerator, int denominator) : this(numerator)
+        public Fraction(int numerator, int denominator)
         {
-            m_Denominator = denominator;
+            m_Numerator = numerator;
+            m_Denominator = denominator;            
         }
 
         public static Fraction operator + (Fraction f1, Fraction f2)
@@ -29,7 +29,7 @@ namespace AndreaAngella
 
         public override string ToString()
         {
-            return $"{m_Numerator}/{m_Denominator}";
+            return m_Denominator == 1 ? $"{m_Numerator}" : $"{m_Numerator}/{m_Denominator}";
         }
 
         public bool Equals(Fraction other)
