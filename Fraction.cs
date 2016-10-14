@@ -13,6 +13,8 @@ namespace AndreaAngella
 
         public Fraction(int numerator, int denominator)
         {
+            if (denominator == 0) throw new ArgumentException(nameof(denominator));
+
             m_Numerator = numerator;
             m_Denominator = denominator;            
         }

@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 
 namespace AndreaAngella.Tests
 {
@@ -130,6 +131,12 @@ namespace AndreaAngella.Tests
         public void Null_NotEqualsTo_Fraction()
         {
             Assert.That(null, Is.Not.EqualTo(new Fraction(5, 1)));
+        }
+
+        [Test]
+        public void FiveOverZero_IsInvalid()
+        {
+            Assert.Throws<ArgumentException>(() => new Fraction(5, 0));
         }
     }
 }
