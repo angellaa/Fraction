@@ -62,6 +62,12 @@ namespace AndreaAngella.Tests
             }
 
             [Test]
+            public void OverOverTwo_Plus_Five()
+            {
+                Assert.That(new Fraction(1, 2) + 5, Is.EqualTo(new Fraction(11, 2)));
+            }
+
+            [Test]
             public void OneOverThree_Plus_FourOverThree()
             {
                 Assert.That(new Fraction(1, 3) + new Fraction(4, 3), Is.EqualTo(new Fraction(5, 3)));
