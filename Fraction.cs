@@ -23,6 +23,11 @@ namespace AndreaAngella
 
         public static Fraction operator + (Fraction f1, Fraction f2)
         {
+            if (f1.m_Denominator == f2.m_Denominator)
+            {
+                return new Fraction(f1.m_Numerator + f2.m_Numerator, f1.m_Denominator);
+            }
+
             return new Fraction(f1.m_Numerator * f2.m_Denominator + f2.m_Numerator, f2.m_Denominator);
         }
 
