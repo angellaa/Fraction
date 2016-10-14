@@ -39,5 +39,11 @@ namespace AndreaAngella.Tests
         {
             Assert.That(new Fraction(4) + 9, Is.EqualTo(new Fraction(13)));
         }
+
+        [Test]
+        public void Zero_Plus_OneOverTwo()
+        {
+            Assert.That(0 + new Fraction(1, 2), Is.EqualTo(new Fraction(1, 2)));
+        }
     }
 }
