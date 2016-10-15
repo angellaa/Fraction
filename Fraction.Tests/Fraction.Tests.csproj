@@ -48,6 +48,7 @@
     <Compile Include="FractionEqualityTests.cs" />
     <Compile Include="FractionTests.cs" />
     <Compile Include="FractionToStringTests.cs" />
+    <Compile Include="MathUtilTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
