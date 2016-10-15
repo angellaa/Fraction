@@ -44,7 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FractionAdditionTests.cs" />
+    <Compile Include="FractionEqualityTests.cs" />
     <Compile Include="FractionTests.cs" />
+    <Compile Include="FractionToStringTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
