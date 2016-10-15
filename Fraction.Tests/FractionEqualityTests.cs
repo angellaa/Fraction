@@ -95,5 +95,11 @@ namespace AndreaAngella.Tests
         {
             Assert.That(new Fraction(2, -7), Is.EqualTo(new Fraction(-2, 7)));
         }
+
+        [Test]
+        public void TwoOverThree_Equals_FourOverSix()
+        {
+            Assert.That(new Fraction(2, 3), Is.EqualTo(new Fraction(4, 6)));
+        }
     }
 }
