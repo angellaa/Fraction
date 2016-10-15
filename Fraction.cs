@@ -7,11 +7,7 @@ namespace AndreaAngella
         private readonly int m_Numerator;
         private readonly int m_Denominator;
 
-        public Fraction(int numerator) : this(numerator, 1)
-        {
-        }
-
-        public Fraction(int numerator, int denominator)
+        public Fraction(int numerator, int denominator = 1)
         {
             if (denominator == 0) throw new ArgumentException(nameof(denominator));
 
