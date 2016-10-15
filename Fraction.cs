@@ -17,8 +17,10 @@ namespace AndreaAngella
             if (numerator < 0) throw new NotImplementedException();
             if (denominator < 0) throw new NotImplementedException();
 
-            m_Numerator = numerator;
-            m_Denominator = denominator;            
+            var gcd = GreatestCommonDivisor(numerator, denominator);
+
+            m_Numerator = numerator / gcd;
+            m_Denominator = denominator / gcd;
         }
 
         public static Fraction operator + (Fraction f1, Fraction f2)
@@ -38,11 +40,28 @@ namespace AndreaAngella
                 return new Fraction(f1.m_Numerator + f2.m_Numerator * f1.m_Denominator, f1.m_Denominator);
             }
 
-            var lowestCommonMultiple = f1.m_Denominator * f2.m_Denominator;
+            var lowestCommonMultiple = LowestCommonMultiple(f1.m_Denominator, f2.m_Denominator);
 
             return new Fraction(f1.m_Numerator * lowestCommonMultiple / f1.m_Denominator + 
                                 f2.m_Numerator * lowestCommonMultiple / f2.m_Denominator, 
                                 lowestCommonMultiple);
+        }
+
+        private static int LowestCommonMultiple(int a, int b)
+        {
+            return a / GreatestCommonDivisor(a, b) * b;
+        }
+
+        private static int GreatestCommonDivisor(int a, int b)
+        {
+            while (b != 0)
+            {
+                var temp = b;
+                b = a % b;
+                a = temp;
+            }
+
+            return a;
         }
 
         public static implicit operator Fraction (int value)

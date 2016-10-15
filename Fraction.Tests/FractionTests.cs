@@ -78,6 +78,24 @@ namespace AndreaAngella.Tests
             {
                 Assert.That(new Fraction(7, 3) + new Fraction(4, 5), Is.EqualTo(new Fraction(47, 15)));
             }
+
+            [Test]
+            public void OneOverThree_Plus_FiveOverSix()
+            {
+                Assert.That(new Fraction(1, 3) + new Fraction(5, 6), Is.EqualTo(new Fraction(7, 6)));
+            }
+
+            [Test]
+            public void OneOverFour_Plus_OneOverSix()
+            {
+                Assert.That(new Fraction(1, 4) + new Fraction(1, 6), Is.EqualTo(new Fraction(5, 12)));
+            }
+
+            [Test]
+            public void OneOverTwo_Plus_OneOverSix()
+            {
+                Assert.That(new Fraction(1, 2) + new Fraction(1, 6), Is.EqualTo(new Fraction(2, 3)));
+            }
         }
 
         public class ToStringTests
