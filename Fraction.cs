@@ -14,8 +14,6 @@ namespace AndreaAngella
         public Fraction(int numerator, int denominator)
         {
             if (denominator == 0) throw new ArgumentException(nameof(denominator));
-            if (numerator < 0) throw new NotImplementedException();
-            if (denominator < 0) throw new NotImplementedException();
 
             var gcd = MathUtil.GreatestCommonDivisor(numerator, denominator);
 

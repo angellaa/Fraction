@@ -59,5 +59,29 @@ namespace AndreaAngella.Tests
         {
             Assert.That(null, Is.Not.EqualTo(new Fraction(5, 1)));
         }
+
+        [Test]
+        public void MinusOne_Equals_MinusOneOverOne()
+        {
+            Assert.That(new Fraction(1, -1), Is.EqualTo(new Fraction(-1, 1)));
+        }
+
+        [Test]
+        public void MinusOneOverMinusOne_Equals_OneOverOne()
+        {
+            Assert.That(new Fraction(-1, -1), Is.EqualTo(new Fraction(1, 1)));
+        }
+
+        [Test]
+        public void MinusTwoOverMinusSeven_Equals_TwoOverSeven()
+        {
+            Assert.That(new Fraction(-2, -7), Is.EqualTo(new Fraction(2, 7)));
+        }
+
+        [Test]
+        public void TwoOverMinusSeven_Equals_MinusTwoOverSeven()
+        {
+            Assert.That(new Fraction(2, -7), Is.EqualTo(new Fraction(-2, 7)));
+        }
     }
 }
