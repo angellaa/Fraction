@@ -16,5 +16,18 @@ namespace AndreaAngella.Tests
         {
             Assert.That(MathUtil.LowestCommonMultiple(a, b), Is.EqualTo(result));
         }
+
+        [TestCase(1, 1, 1)]
+        [TestCase(2, 1, 1)]
+        [TestCase(1, 2, 1)]
+        [TestCase(3, 9, 3)]
+        [TestCase(9, 3, 3)]
+        [TestCase(20, 25, 5)]
+        [TestCase(12, 18, 6)]
+        [TestCase(24, 60, 12)]
+        public void GreatestCommonDivisor(int a, int b, int result)
+        {
+            Assert.That(MathUtil.GreatestCommonDivisor(a, b), Is.EqualTo(result));
+        }
     }
 }
