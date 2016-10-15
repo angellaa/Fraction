@@ -73,6 +73,18 @@ namespace AndreaAngella.Tests
         }
 
         [Test]
+        public void OneOverThree_NotEquals_TwoOverThree()
+        {
+            Assert.That(new Fraction(1, 3), Is.Not.EqualTo(new Fraction(2, 3)));
+        }
+
+        [Test]
+        public void OneOverThree_NotEquals_OneOverFour()
+        {
+            Assert.That(new Fraction(1, 3), Is.Not.EqualTo(new Fraction(1, 4)));
+        }
+
+        [Test]
         public void MinusTwoOverMinusSeven_Equals_TwoOverSeven()
         {
             Assert.That(new Fraction(-2, -7), Is.EqualTo(new Fraction(2, 7)));
