@@ -5,33 +5,34 @@ namespace AndreaAngella.Tests
     public class FractionToStringTests
     {
         [Test]
-        public void OneOverTwo_ToString()
+        public void Fraction()
         {
             Assert.That(new Fraction(1, 2).ToString(), Is.EqualTo("1/2"));
         }
 
         [Test]
-        public void Zero_ToString()
+        public void ZeroFraction()
         {
             Assert.That(new Fraction(0).ToString(), Is.EqualTo("0"));
         }
 
         [Test]
-        public void ZeroOverOne_ToString()
-        {
-            Assert.That(new Fraction(0, 1).ToString(), Is.EqualTo("0"));
-        }
-
-        [Test]
-        public void Two_ToString()
+        public void IntegerFraction()
         {
             Assert.That(new Fraction(2).ToString(), Is.EqualTo("2"));
         }
 
         [Test]
-        public void TwoOverOne_ToString()
+        public void NegativeIntegerFraction()
         {
-            Assert.That(new Fraction(2, 1).ToString(), Is.EqualTo("2"));
+            Assert.That(new Fraction(-10).ToString(), Is.EqualTo("-10"));
+        }
+
+        [Test]
+        [Ignore("Oh wow: I totally missed this!")]
+        public void NegativeFraction()
+        {
+            Assert.That(new Fraction(-3, 8).ToString(), Is.EqualTo("-3/8"));
         }
     }
 }

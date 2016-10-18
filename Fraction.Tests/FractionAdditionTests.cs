@@ -23,79 +23,67 @@ namespace AndreaAngella.Tests
         }
 
         [Test]
-        public void FractionFour_Plus_FractionNine()
+        public void IntegerFraction_Plus_IntegerFraction()
         {
             Assert.That(new Fraction(4) + new Fraction(9), Is.EqualTo(new Fraction(13)));
         }
 
         [Test]
-        public void Four_Plus_FractionNine()
+        public void Integer_Plus_IntegerFraction()
         {
             Assert.That(4 + new Fraction(9), Is.EqualTo(new Fraction(13)));
         }
 
         [Test]
-        public void FractionFour_Plus_Nine()
+        public void IntegerFraction_Plus_Integer()
         {
             Assert.That(new Fraction(4) + 9, Is.EqualTo(new Fraction(13)));
         }
 
         [Test]
-        public void Zero_Plus_OneOverTwo()
+        public void Zero_Plus_Fraction()
         {
             Assert.That(0 + new Fraction(1, 2), Is.EqualTo(new Fraction(1, 2)));
         }
 
         [Test]
-        public void One_Plus_OneOverTwo()
-        {
-            Assert.That(1 + new Fraction(1, 2), Is.EqualTo(new Fraction(3, 2)));
-        }
-
-        [Test]
-        public void Five_Plus_OneOverTwo()
+        public void Integer_Plus_Fraction()
         {
             Assert.That(5 + new Fraction(1, 2), Is.EqualTo(new Fraction(11, 2)));
         }
 
         [Test]
-        public void OverOverTwo_Plus_Five()
+        public void Fraction_Plus_Integer()
         {
-            Assert.That(new Fraction(1, 2) + 5, Is.EqualTo(new Fraction(11, 2)));
+            Assert.That(new Fraction(1, 2) + 7, Is.EqualTo(new Fraction(15, 2)));
         }
 
         [Test]
-        public void OneOverThree_Plus_FourOverThree()
+        public void SameDenominators()
         {
             Assert.That(new Fraction(1, 3) + new Fraction(4, 3), Is.EqualTo(new Fraction(5, 3)));
         }
 
         [Test]
-        public void SevenOveThree_Plus_FourOverFive()
+        public void Fraction_Plus_Fraction_NoReduceRequired()
         {
             Assert.That(new Fraction(7, 3) + new Fraction(4, 5), Is.EqualTo(new Fraction(47, 15)));
         }
 
         [Test]
-        public void OneOverThree_Plus_FiveOverSix()
+        public void DenominatorMultipleOfTheOther()
         {
             Assert.That(new Fraction(1, 3) + new Fraction(5, 6), Is.EqualTo(new Fraction(7, 6)));
         }
 
         [Test]
-        public void OneOverFour_Plus_OneOverSix()
-        {
-            Assert.That(new Fraction(1, 4) + new Fraction(1, 6), Is.EqualTo(new Fraction(5, 12)));
-        }
-
-        [Test]
-        public void OneOverTwo_Plus_OneOverSix()
+        public void Fraction_Plus_Fraction_ReduceRequired()
         {
             Assert.That(new Fraction(1, 2) + new Fraction(1, 6), Is.EqualTo(new Fraction(2, 3)));
         }
 
         [Test]
-        public void MinusOneOverTwo_Plus_OneOverThree()
+        public void NegativeFraction_Plus_Fraction()
         {
             Assert.That(new Fraction(-1, 2) + new Fraction(1, 3), Is.EqualTo(new Fraction(-1, 6)));
         }

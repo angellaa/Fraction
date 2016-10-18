@@ -12,7 +12,7 @@ namespace AndreaAngella.Tests
         [TestCase(2, 3, 6)]
         [TestCase(9, 6, 18)]
         [TestCase(7, 5, 35)]
-        public void LowestCommonMultipleTests(int a, int b, int result)
+        public void LowestCommonMultiple(int a, int b, int result)
         {
             Assert.That(MathUtil.LowestCommonMultiple(a, b), Is.EqualTo(result));
         }

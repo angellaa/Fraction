@@ -46,7 +46,7 @@
   <ItemGroup>
     <Compile Include="FractionAdditionTests.cs" />
     <Compile Include="FractionEqualityTests.cs" />
-    <Compile Include="FractionTests.cs" />
+    <Compile Include="FractionCreationTests.cs" />
     <Compile Include="FractionToStringTests.cs" />
     <Compile Include="MathUtilTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

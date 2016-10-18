@@ -17,33 +17,27 @@ namespace AndreaAngella.Tests
         }
 
         [Test]
-        public void FractionZeroOverOne_Equals_FractionZero()
-        {
-            Assert.That(new Fraction(0, 1), Is.EqualTo(new Fraction(0)));
-        }
-
-        [Test]
-        public void Five_Equals_FractionFive()
-        {
-            Assert.That((Fraction)5, Is.EqualTo(new Fraction(5)));
-        }
-
-        [Test]
-        public void FractionFive_Equals_FractionFive()
-        {
-            Assert.That(new Fraction(5), Is.EqualTo(new Fraction(5)));
-        }
-
-        [Test]
-        public void FractionFiveOverOne_Equals_FractionFive()
+        public void DenominatorIsImplicitelyOne()
         {
             Assert.That(new Fraction(5, 1), Is.EqualTo(new Fraction(5)));
         }
 
         [Test]
+        public void Integer_Equals_IntegerFraction()
+        {
+            Assert.That((Fraction)5, Is.EqualTo(new Fraction(5)));
+        }
+
+        [Test]
+        public void IntegerFraction_Equals_IntegerFraction()
+        {
+            Assert.That(new Fraction(5), Is.EqualTo(new Fraction(5)));
+        }
+
+        [Test]
         public void Fraction_EqualsTo_ItSelf()
         {
-            var fraction = new Fraction(5, 1);
+            var fraction = new Fraction(5, 3);
 
             Assert.That(fraction, Is.EqualTo(fraction));
         }
@@ -51,53 +45,41 @@ namespace AndreaAngella.Tests
         [Test]
         public void Fraction_NotEqualsTo_Null()
         {
-            Assert.That(new Fraction(5, 1), Is.Not.EqualTo(null));
+            Assert.That(new Fraction(9, 4), Is.Not.EqualTo(null));
         }
 
         [Test]
         public void Null_NotEqualsTo_Fraction()
         {
-            Assert.That(null, Is.Not.EqualTo(new Fraction(5, 1)));
+            Assert.That(null, Is.Not.EqualTo(new Fraction(2, 7)));
         }
 
         [Test]
-        public void MinusOne_Equals_MinusOneOverOne()
+        public void FractionWithNegativeDenominator_Equals_FractionWithNegativeNumerator()
         {
-            Assert.That(new Fraction(1, -1), Is.EqualTo(new Fraction(-1, 1)));
+            Assert.That(new Fraction(1, -2), Is.EqualTo(new Fraction(-1, 2)));
         }
 
         [Test]
-        public void MinusOneOverMinusOne_Equals_OneOverOne()
+        public void NegativeNumeratorAndDenominator_Equals_PositiveNumeratorAndDenominator()
         {
-            Assert.That(new Fraction(-1, -1), Is.EqualTo(new Fraction(1, 1)));
+            Assert.That(new Fraction(-3, -4), Is.EqualTo(new Fraction(3, 4)));
         }
 
         [Test]
-        public void OneOverThree_NotEquals_TwoOverThree()
+        public void DifferentNumerators()
         {
             Assert.That(new Fraction(1, 3), Is.Not.EqualTo(new Fraction(2, 3)));
         }
 
         [Test]
-        public void OneOverThree_NotEquals_OneOverFour()
+        public void DifferentDenominators()
         {
             Assert.That(new Fraction(1, 3), Is.Not.EqualTo(new Fraction(1, 4)));
         }
-
+        
         [Test]
-        public void MinusTwoOverMinusSeven_Equals_TwoOverSeven()
-        {
-            Assert.That(new Fraction(-2, -7), Is.EqualTo(new Fraction(2, 7)));
-        }
-
-        [Test]
-        public void TwoOverMinusSeven_Equals_MinusTwoOverSeven()
-        {
-            Assert.That(new Fraction(2, -7), Is.EqualTo(new Fraction(-2, 7)));
-        }
-
-        [Test]
-        public void TwoOverThree_Equals_FourOverSix()
+        public void Fraction_Equals_ReducedFraction()
         {
             Assert.That(new Fraction(2, 3), Is.EqualTo(new Fraction(4, 6)));
         }

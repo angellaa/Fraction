@@ -3,10 +3,10 @@ using NUnit.Framework;
 
 namespace AndreaAngella.Tests
 {
-    public class FractionTests
+    public class FractionCreationTests
     {
         [Test]
-        public void FiveOverZero_IsInvalid()
+        public void ZeroDenominator()
         {
             Assert.Throws<ArgumentException>(() => new Fraction(5, 0));
         }
