@@ -29,7 +29,6 @@ namespace AndreaAngella.Tests
         }
 
         [Test]
-        [Ignore("Oh wow: I totally missed this!")]
         public void NegativeFraction()
         {
             Assert.That(new Fraction(-3, 8).ToString(), Is.EqualTo("-3/8"));

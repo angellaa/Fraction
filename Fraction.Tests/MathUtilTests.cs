@@ -29,5 +29,20 @@ namespace AndreaAngella.Tests
         {
             Assert.That(MathUtil.GreatestCommonDivisor(a, b), Is.EqualTo(result));
         }
+
+        [TestCase(0)]
+        [TestCase(1)]
+        [TestCase(5)]
+        public void PosibiveAbs(int a)
+        {
+            Assert.That(MathUtil.Abs(a), Is.EqualTo(a));
+        }
+
+        [TestCase(-1)]
+        [TestCase(-5)]
+        public void NegativeAbs(int a)
+        {
+            Assert.That(MathUtil.Abs(a), Is.EqualTo(-a));
+        }
     }
 }

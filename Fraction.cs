@@ -11,7 +11,7 @@ namespace AndreaAngella
         {
             if (denominator == 0) throw new ArgumentException(nameof(denominator));
 
-            var gcd = MathUtil.GreatestCommonDivisor(numerator, denominator);
+            var gcd = MathUtil.GreatestCommonDivisor(numerator, denominator) * Math.Sign(denominator);
 
             m_Numerator = numerator / gcd;
             m_Denominator = denominator / gcd;
