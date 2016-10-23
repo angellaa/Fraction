@@ -1,6 +1,6 @@
 ﻿namespace AndreaAngella
 {
-    public class MathUtil
+    public class NumberTheory
     {
         public static int LowestCommonMultiple(int a, int b)
         {

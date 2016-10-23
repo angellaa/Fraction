@@ -2,7 +2,7 @@
 
 namespace AndreaAngella.Tests
 {
-    public class MathUtilTests
+    public class NumberTheoryTests
     {
         [TestCase(1, 1, 1)]
         [TestCase(1, 2, 2)]
@@ -14,7 +14,7 @@ namespace AndreaAngella.Tests
         [TestCase(7, 5, 35)]
         public void LowestCommonMultiple(int a, int b, int result)
         {
-            Assert.That(MathUtil.LowestCommonMultiple(a, b), Is.EqualTo(result));
+            Assert.That(NumberTheory.LowestCommonMultiple(a, b), Is.EqualTo(result));
         }
 
         [TestCase(1, 1, 1)]
@@ -27,7 +27,7 @@ namespace AndreaAngella.Tests
         [TestCase(24, 60, 12)]
         public void GreatestCommonDivisor(int a, int b, int result)
         {
-            Assert.That(MathUtil.GreatestCommonDivisor(a, b), Is.EqualTo(result));
+            Assert.That(NumberTheory.GreatestCommonDivisor(a, b), Is.EqualTo(result));
         }
 
         [TestCase(0)]
@@ -35,14 +35,14 @@ namespace AndreaAngella.Tests
         [TestCase(5)]
         public void PosibiveAbs(int a)
         {
-            Assert.That(MathUtil.Abs(a), Is.EqualTo(a));
+            Assert.That(NumberTheory.Abs(a), Is.EqualTo(a));
         }
 
         [TestCase(-1)]
         [TestCase(-5)]
         public void NegativeAbs(int a)
         {
-            Assert.That(MathUtil.Abs(a), Is.EqualTo(-a));
+            Assert.That(NumberTheory.Abs(a), Is.EqualTo(-a));
         }
     }
 }
