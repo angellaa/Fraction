@@ -35,6 +35,12 @@ namespace AndreaAngella.Tests
         }
 
         [Test]
+        public void Fraction_Equals_Fraction()
+        {
+            Assert.That(new Fraction(3, 4), Is.EqualTo(new Fraction(3, 4)));
+        }
+
+        [Test]
         public void Fraction_EqualsTo_ItSelf()
         {
             var fraction = new Fraction(5, 3);
@@ -77,7 +83,7 @@ namespace AndreaAngella.Tests
         {
             Assert.That(new Fraction(1, 3), Is.Not.EqualTo(new Fraction(1, 4)));
         }
-        
+
         [Test]
         public void Fraction_Equals_ReducedFraction()
         {
