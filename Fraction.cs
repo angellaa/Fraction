@@ -11,7 +11,7 @@ namespace AndreaAngella
         {
             if (denominator == 0) throw new ArgumentException(nameof(denominator));
 
-            var gcd = MathUtil.GreatestCommonDivisor(numerator, denominator) * Math.Sign(denominator);
+            var gcd = NumberTheory.GreatestCommonDivisor(numerator, denominator) * Math.Sign(denominator);
 
             m_Numerator = numerator / gcd;
             m_Denominator = denominator / gcd;
@@ -19,7 +19,7 @@ namespace AndreaAngella
 
         public static Fraction operator + (Fraction f1, Fraction f2)
         {
-            var lowestCommonMultiple = MathUtil.LowestCommonMultiple(f1.m_Denominator, f2.m_Denominator);
+            var lowestCommonMultiple = NumberTheory.LowestCommonMultiple(f1.m_Denominator, f2.m_Denominator);
 
             return new Fraction(f1.m_Numerator * lowestCommonMultiple / f1.m_Denominator + 
                                 f2.m_Numerator * lowestCommonMultiple / f2.m_Denominator, 
